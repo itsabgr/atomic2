@@ -6,8 +6,8 @@ import (
 
 type Int uintptr
 
-func (n *Int) Add(increase int) uintptr {
-	return atomic.AddUintptr((*uintptr)(n), uintptr(increase))
+func (n *Int) Add(increase int) int {
+	return int(atomic.AddUintptr((*uintptr)(n), uintptr(increase)))
 }
 
 func (n *Int) Sub(decrease int) int {
