@@ -12,6 +12,9 @@ type Ptr struct {
 func (ptr Ptr) Set(another unsafe.Pointer) {
 	atomic.StorePointer(&ptr.ptr, another)
 }
+func (ptr Ptr) Ptr() unsafe.Pointer {
+	return ptr.ptr
+}
 func (ptr Ptr) Get() (another unsafe.Pointer) {
 	return atomic.LoadPointer(&ptr.ptr)
 }
