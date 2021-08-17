@@ -9,6 +9,9 @@ type Ptr struct {
 	ptr unsafe.Pointer
 }
 
+func AsPtr(ptr unsafe.Pointer) Ptr {
+	return Ptr{ptr}
+}
 func (ptr Ptr) Set(another unsafe.Pointer) {
 	atomic.StorePointer(&ptr.ptr, another)
 }
