@@ -6,6 +6,8 @@ import (
 
 type Uintptr uintptr
 
+type Uint = Uintptr
+
 func (n *Uintptr) Add(increase uintptr) uintptr {
 	return atomic.AddUintptr((*uintptr)(n), increase)
 }
